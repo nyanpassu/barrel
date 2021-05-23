@@ -18,6 +18,15 @@ type IPInfo struct {
 	PoolID      string
 	Address     string
 	Status      BitStatus
+	Attrs       *IPAttribute
+}
+
+type IPAttribute struct {
+	ContainerRefs []SimpleContainerInfo
+}
+type SimpleContainerInfo struct {
+	ID       string
+	HostName string
 }
 
 const (

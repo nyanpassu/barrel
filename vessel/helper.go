@@ -97,7 +97,7 @@ func (helper Helper) ReleaseContainerAddresses(ctx context.Context, containerID 
 }
 
 // ReserveAddressForContainer .
-func (helper Helper) ReserveAddressForContainer(ctx context.Context, containerID string, address types.IP) error {
+func (helper Helper) AddAddressContainerRef(ctx context.Context, address types.IP, containerID string) error {
 	logger := helper.Logger("ReserveAddressForContainer")
 
 	if err := helper.FixedIPAllocator().AllocFixedIP(ctx, address); err != nil {
